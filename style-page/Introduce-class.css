@@ -1,0 +1,287 @@
+body {
+  margin: 0;
+  font-family: Roboto, arial;
+  padding-bottom: 3000px;
+  padding-top: 100px;
+  background: linear-gradient(123deg, rgb(228, 231, 229), #ffe6ef);
+}
+p {
+  margin: 0;
+}
+main {
+  max-width: 1262px;
+  width: 100%;
+  margin: 0 auto;
+}
+/*phần navbar*/
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-left: 50px;
+  padding-right: 50px;
+  white-space: nowrap;
+  z-index: 1000;
+  background: #25522e;
+  transition: 0.3s ease;
+}
+
+.logo {
+  width: 50px;
+  border-radius: 50%;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+.navbar .option {
+  text-decoration: none;
+  font-weight: bold;
+  color: #ede8ec;
+  margin-right: 60px;
+  transition: 0.3s ease;
+}
+.navbar .option:hover {
+  color: #7fb591;
+}
+nav li {
+  padding: 8px;
+}
+
+.search-div {
+  display: flex;
+  align-items: center;
+}
+.search-div input {
+  padding: 8px 10px;
+  border: none;
+  border-radius: 20px 0 0 20px;
+  outline: none;
+}
+.search-div button img {
+  width: 22px;
+  filter: invert(100%);
+}
+.search-div button {
+  padding: 3.4px 12px;
+  border: none;
+  border-radius: 0 20px 20px 0;
+  background-color: #7fb591;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.search-div button:hover {
+  background-color: #66a87c;
+}
+.search-div button:active {
+  background-color: #327438;
+}
+.gioi-thieu-nav {
+  position: relative;
+  text-decoration: none;
+  font-weight: bold;
+  color: #ede8ec;
+  transition: 0.2s ease;
+}
+.gioi-thieu-nav:hover .gioi-thieu-dropdown {
+  opacity: 1;
+  pointer-events: auto;
+}
+.gioi-thieu-dropdown {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: #44624a;
+  border-radius: 8px;
+  left: 0;
+  top: 100%;
+  opacity: 0;
+  pointer-events: none;
+}
+.gioi-thieu-dropdown a {
+  padding: 8px 16px;
+  color: #cfcccf;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.gioi-thieu-dropdown a:hover {
+  background-color: #55775c;
+  color: #000000;
+}
+.dropdown-one {
+  border-radius: 8px 8px 0 0;
+}
+.dropdown-two {
+  border-radius: 0 0 8px 8px;
+}
+/* 12.2 part*/
+.thanh-vien-title {
+  font-size: 50px;
+  font-family: "Playfair Display", serif;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 50px;
+}
+/* homeroom */
+.homeroom-teacher-general {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background: url("../photo/cotrang-background.jpg") no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+  height: 600px;
+  padding: 0px;
+  box-shadow: inset 0 0 10px #00000070;
+  border-radius: 50px;
+  margin-bottom: 100px;
+  z-index: 1;
+}
+.homeroom-overlay {
+  position: absolute;
+  background: linear-gradient(
+    123deg,
+    rgba(22, 77, 25, 0.596),
+    rgba(90, 165, 94, 0.582)
+  );
+  border-radius: 50px;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+.homeroom-teacher-photo-div {
+  position: absolute;
+  z-index: 100;
+  bottom: -150px;
+}
+.homeroom-teacher-photo {
+  width: 550px;
+  display: block;
+}
+.homeroom-teacher-content {
+  position: absolute;
+  z-index: 3;
+}
+.homeroom-teacher-content h1 {
+  font-size: 55px;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  color: rgb(235, 233, 233);
+}
+.homeroom-teacher-name {
+  font-size: 58px;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #e47932;
+  margin-bottom: 60px;
+  padding: 10px;
+}
+.homeroom-decoration {
+  width: 100px;
+}
+.heart-2 {
+  position: absolute;
+  top: 40px;
+  right: 60px;
+  transition: 0.3s ease;
+  z-index: 3;
+}
+.heart-2:hover {
+  transform: scale(1.9);
+}
+.kitty {
+  position: absolute;
+  bottom: 40px;
+  left: 100px;
+  transition: 0.3s ease;
+  z-index: 3;
+}
+.kitty:hover {
+  transform: scale(1.1);
+  opacity: 1;
+  filter: invert(90%);
+}
+.cat:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+.cat {
+  position: absolute;
+  top: 50px;
+  left: 70px;
+  transition: 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.315);
+  border-radius: 50%;
+  padding: 30px;
+  opacity: 0;
+  z-index: 3;
+}
+/* member cards */
+.class-member-general h1 {
+  margin-bottom: 50px;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  font-style: italic;
+}
+.class-member-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  gap: 40px;
+}
+.class-member-card {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #ffffff, #f3f8f4);
+  border-left: 4px solid #4caf50;
+  padding: 15px 18px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+.class-member-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.14);
+  background: linear-gradient(135deg, #ffffff, #e8f5e9);
+}
+
+.class-member-card-photo-div {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 30px;
+}
+.class-member-card-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.class-member-card-content h2 {
+  font-size: 25px;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 25px;
+  color: rgb(0, 0, 0);
+}
+.class-member-card-content p {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  padding: 1px;
+  color: rgb(0, 0, 0);
+  border-left: 3px solid #ff6961;
+  padding-left: 8px;
+}

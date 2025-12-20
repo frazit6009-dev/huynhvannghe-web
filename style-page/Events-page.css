@@ -1,0 +1,339 @@
+body {
+  margin: 0;
+  font-family: Roboto, arial;
+  padding-bottom: 3000px;
+  padding-top: 100px;
+  background: linear-gradient(123deg, rgb(228, 231, 229), #ffe6ef);
+}
+p {
+  margin: 0;
+}
+main {
+  max-width: 1262px;
+  width: 100%;
+  margin: 0 auto;
+}
+/*phần navbar*/
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-left: 50px;
+  padding-right: 50px;
+  white-space: nowrap;
+  z-index: 1000;
+  background: #25522e;
+  transition: 0.3s ease;
+}
+
+.logo {
+  width: 50px;
+  border-radius: 50%;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+.navbar .option {
+  text-decoration: none;
+  font-weight: bold;
+  color: #ede8ec;
+  margin-right: 60px;
+  transition: 0.3s ease;
+}
+.navbar .option:hover {
+  color: #7fb591;
+}
+nav li {
+  padding: 8px;
+}
+
+.search-div {
+  display: flex;
+  align-items: center;
+}
+.search-div input {
+  padding: 8px 10px;
+  border: none;
+  border-radius: 20px 0 0 20px;
+  outline: none;
+}
+.search-div button img {
+  width: 22px;
+  filter: invert(100%);
+}
+.search-div button {
+  padding: 3.4px 12px;
+  border: none;
+  border-radius: 0 20px 20px 0;
+  background-color: #7fb591;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.search-div button:hover {
+  background-color: #66a87c;
+}
+.search-div button:active {
+  background-color: #327438;
+}
+.gioi-thieu-nav {
+  position: relative;
+  text-decoration: none;
+  font-weight: bold;
+  color: #ede8ec;
+  transition: 0.2s ease;
+}
+.gioi-thieu-nav:hover .gioi-thieu-dropdown {
+  opacity: 1;
+  pointer-events: auto;
+}
+.gioi-thieu-dropdown {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: #44624a;
+  border-radius: 8px;
+  left: 0;
+  top: 100%;
+  opacity: 0;
+  pointer-events: none;
+}
+.gioi-thieu-dropdown a {
+  padding: 8px 16px;
+  color: #cfcccf;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.gioi-thieu-dropdown a:hover {
+  background-color: #55775c;
+  color: #000000;
+}
+.dropdown-one {
+  border-radius: 8px 8px 0 0;
+}
+.dropdown-two {
+  border-radius: 0 0 8px 8px;
+}
+/* phần events */
+.event-head {
+  background: url(../photo/tongthe-HVN.jpg);
+  background-size: cover;
+  height: 500px;
+  max-width: 100%;
+  border-radius: 30px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  position: relative;
+}
+.event-head img {
+  width: 100%;
+  height: 300px;
+}
+.event-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, #0686cf88, #0011fa9d, #00aeffaf);
+  background-size: 300% 300%;
+  animation: gradientMove 10s ease infinite;
+  pointer-events: none;
+  z-index: 2;
+  border-radius: 30px;
+  filter: brightness(30%);
+}
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.event-content {
+  position: absolute;
+  z-index: 3;
+  left: 30px;
+  top: 40px;
+  padding: 30px;
+}
+.event-content h1 {
+  font-family: "Inter", sans-serif;
+  font-size: 60px;
+  color: rgb(236, 236, 236);
+  margin: 0;
+}
+.event-content p {
+  font-family: "Inter", sans-serif;
+  color: rgb(236, 236, 236);
+  text-align: left;
+  font-size: 12px;
+  line-height: 1.5em;
+  margin-top: 30px;
+}
+.event-content a {
+  color: #0496f7;
+  font-family: "Inter", sans-serif;
+}
+/* list of events */
+.event-general {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 50px 0;
+  max-width: 1200px;
+}
+.event-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+}
+.event-title p {
+  font-family: "Inter", sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+}
+.event-title img {
+  width: 50px;
+  margin-left: 10px;
+}
+.event-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  column-gap: 10px;
+  row-gap: 60px;
+  place-items: center;
+}
+.event-card-div {
+  width: 100%;
+  max-width: 500px;
+  min-height: 568px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.event-card-image {
+  width: 500px;
+  height: 300px;
+  position: relative;
+}
+.event-card-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  display: block;
+}
+.event-heart-icon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 20px;
+  right: 20px;
+  height: 40px;
+  width: 40px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+.event-heart-icon:hover {
+  transform: scale(1.2);
+}
+.event-heart-icon:active {
+  background-color: #ff6680;
+  transform: scale(1);
+}
+.event-heart-icon img {
+  width: 25px;
+  height: 25px;
+}
+.event-time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgb(255, 255, 255);
+  width: 73px;
+  height: 73px;
+  border-radius: 10px;
+}
+.event-time p {
+  font-size: 28px;
+  font-weight: bold;
+  font-family: "Inter", sans-serif;
+}
+.event-time span {
+  font-size: 18px;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  color: #239248;
+}
+/* card list event */
+.event-card-detail {
+  display: grid;
+  grid-template-columns: 25px 1fr;
+  column-gap: 10px;
+  row-gap: 10px;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.event-card-detail-icon {
+  width: 25px;
+}
+.event-card-detail-title-div {
+  grid-column: span 2;
+}
+.event-card-detail-title {
+  font-family: "Inter", sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 10px;
+}
+.event-card-detail-content {
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  padding: 10px;
+}
+.event-card-div button {
+  padding: 15px 40px;
+  border: none;
+  border-radius: 8px;
+  background-color: rgb(42, 124, 255);
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.event-card-div button:hover {
+  background-color: rgb(30, 90, 185);
+  transform: scale(1.1);
+}
+.event-card-div button:active {
+  background-color: rgb(20, 60, 125);
+  transform: scale(1);
+}
+.event-card-div video {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  display: block;
+}
