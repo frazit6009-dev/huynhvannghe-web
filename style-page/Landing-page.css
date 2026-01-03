@@ -1,14 +1,20 @@
+html,
 body {
+  height: 100%;
   margin: 0;
-  font-family: Roboto, arial;
-  padding-bottom: 3000px;
+}
 
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto", arial;
   background: linear-gradient(123deg, rgb(228, 231, 229), #ffe6ef);
 }
 p {
   margin: 0;
 }
 main {
+  flex: 1;
   max-width: 1262px;
   width: 100%;
   margin: 0 auto;
@@ -141,7 +147,7 @@ nav li {
   border-radius: 0 0 8px 8px;
 }
 /*phần hero*/
-hero {
+.hero {
   display: flex;
   column-gap: 0px;
   align-items: center;
@@ -247,7 +253,7 @@ hero {
 .lop12 {
   color: rgb(192, 192, 192);
 }
-hero button {
+.hero button {
   font-size: 16px;
   padding: 18px 30px;
   border-radius: 8px;
@@ -286,26 +292,27 @@ hero button {
 
 /* loi noi dau*/
 .Loi-noi-dau {
-  height: 600px;
-  background-color: lightblue;
+  padding-top: 8vh;
   display: flex;
+  padding-bottom: 50px;
   flex-direction: column;
+  border-bottom: 1px solid rgb(185, 179, 179);
 }
 .loinoidau-title {
   font-size: 50px;
   font-weight: bold;
   font-style: italic;
   font-family: "Playfair Display", serif;
-  background-color: lightgray;
+
   padding: 50px 0;
   text-align: center;
 }
 .loinoidau-content {
   max-width: 650px;
 
-  font-family: "Great Vibes", cursive;
-  line-height: 40px;
-  font-size: 30px;
+  font-family: "Inter", cursive;
+  line-height: 1.5em;
+  font-size: 16px;
   text-align: center;
 }
 .loinoidau-content-div {
@@ -318,7 +325,8 @@ hero button {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-bottom: 200px;
+  padding-bottom: 120px;
+  padding-top: 50px;
 }
 .su-kien-photo-div {
   display: flex;
@@ -349,8 +357,8 @@ hero button {
   font-weight: bold;
   font-style: italic;
   font-family: "Playfair Display", serif;
-  background-color: lightgray;
-  padding: 50px 0;
+
+  padding: 30px 0;
   text-align: center;
   text-align: left;
 }
@@ -388,7 +396,7 @@ hero button {
   grid-template-columns: repeat(6, 1fr);
   column-gap: 15px;
   row-gap: 15px;
-  padding-bottom: 200px;
+  padding-bottom: 100px;
 }
 .Index div {
   gap: 20px;
@@ -484,7 +492,7 @@ hero button {
 }
 
 .Thanh-vien {
-  height: 100vh;
+  padding-bottom: 100px;
 }
 .thanh-vien-title {
   font-size: 50px;
@@ -606,7 +614,8 @@ hero button {
 }
 .viewmore-character-one {
   position: relative;
-  background-image: url("../photo/Hu-Tao-Namecard-Spirit-Soother.png");
+  background-image: url("../photo/my-full.jpg");
+  background-size: cover;
   width: 200px;
   height: 280px;
   border-radius: 35px;
@@ -614,7 +623,8 @@ hero button {
 }
 .viewmore-character-two {
   position: relative;
-  background-image: url("../photo/Dori-Namecard-Jinni.png");
+  background-image: url("../photo/Trang-full.jpg");
+  background-size: cover;
   width: 200px;
   height: 280px;
   border-radius: 35px;
@@ -648,8 +658,8 @@ hero button {
   border-radius: 35px;
   background: linear-gradient(
     180deg,
-    rgba(158, 255, 155, 0),
-    rgba(255, 255, 255, 0.164)
+    rgba(43, 43, 43, 0.13),
+    rgba(255, 255, 255, 0.61)
   );
 }
 .viewmore-character-name {
@@ -746,4 +756,353 @@ hero button {
 }
 .bonus-logo {
   border-radius: 50%;
+}
+/* footer */
+
+footer {
+  background: linear-gradient(120deg, #25522e, #177536);
+  color: #eaf5ee;
+  padding: 10px 70px;
+}
+.footer-header {
+  border: none;
+  border-bottom: 1px solid rgb(165, 165, 165);
+}
+.footer-header h1 {
+  font-family: "Inter", sans-serif;
+  font-size: 50px;
+  color: white;
+}
+.footer-header span {
+  background: linear-gradient(90deg, #66bb6a, #a5d6a7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.footer-content {
+  display: flex;
+  align-self: center;
+  justify-content: space-between;
+  border: none;
+  border-bottom: 1px solid rgb(165, 165, 165);
+  padding: 12px 0;
+}
+/* footer - left */
+.footer-left div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 10px;
+}
+.footer-left img {
+  width: 65px;
+  border-radius: 50%;
+  display: block;
+}
+.footer-left h2 {
+  font-family: "Inter", sans-serif;
+  color: white;
+  margin: 0;
+}
+.footer-left p {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  color: rgb(228, 228, 228);
+  line-height: 1.3em;
+  white-space: nowrap;
+}
+/* footer middle */
+.footer-middle {
+  display: flex;
+  white-space: nowrap;
+}
+.footer-middle div {
+  padding-right: 55px;
+}
+.footer-middle h2 {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  color: #94dd03;
+  font-size: 18px;
+  padding: 10px;
+}
+.footer-middle ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 10px;
+}
+.footer-middle li {
+  color: rgb(228, 228, 228);
+  font-size: 12px;
+  padding: 10px;
+  transition: 0.3s ease;
+}
+.footer-middle li:hover {
+  background-color: rgba(211, 211, 211, 0.397);
+}
+.footer-middle a {
+  text-decoration: none;
+}
+/* footer right*/
+.footer-right {
+  max-width: 300px;
+}
+.footer-right h2 {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  color: #94dd03;
+  font-size: 18px;
+  padding: 10px 0 30px 0;
+  white-space: nowrap;
+}
+.brand-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+  gap: 20px;
+}
+.brand-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px;
+  border-radius: 50px;
+  transition: 0.3s ease;
+  background-color: rgb(255, 255, 255);
+
+  overflow: hidden;
+}
+.brand-item:hover {
+  transform: translateY(-5px);
+}
+.brand-item img {
+  width: 100%;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: 0.3s ease;
+}
+.brand-item:hover img {
+  filter: grayscale(0);
+  opacity: 1;
+}
+/* author */
+.copyright {
+  font-size: 12px;
+  padding: 12px 0;
+  color: white;
+  font-family: "Inter", sans-serif;
+}
+.copyright span {
+  color: #7aeb74;
+}
+@media (max-width: 1024px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-content {
+    align-items: center;
+  }
+
+  footer {
+    padding: 40px 15px 15px;
+  }
+  .footer-header h1 {
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  /* ===== NAVBAR ===== */
+  .navbar {
+    padding: 10px 15px;
+    justify-content: space-between;
+  }
+  .video-box {
+    width: 500px !important;
+  }
+  nav ul {
+    gap: 10px;
+    padding-left: 0;
+    padding-right: 40;
+  }
+
+  .navbar .option {
+    margin-right: 0;
+    font-size: 14px;
+  }
+
+  .search-div {
+    display: none; /* mobile thường ẩn search */
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+    padding: 100px 15px 50px;
+  }
+  .hero-background {
+    height: 110vh;
+  }
+  .hero-content {
+    padding-right: 0 !important;
+    margin-top: 0;
+    white-space: normal;
+    align-items: center;
+  }
+
+  .ngoitruong,
+  .menyeu {
+    font-size: 42px;
+    line-height: 1.2;
+  }
+
+  .hero-picture {
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+  }
+
+  /* ===== HOMEROOM ===== */
+  .homeroom-teacher-general {
+    height: auto;
+    padding: 60px 20px;
+    border-radius: 25px;
+  }
+
+  .homeroom-teacher-photo-div {
+    position: static;
+    margin-top: 40px;
+  }
+
+  .homeroom-teacher-photo {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .homeroom-teacher-content h1,
+  .homeroom-teacher-name {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  /* ===== CLASS MEMBER ===== */
+  .class-member-container {
+    grid-template-columns: 1fr;
+  }
+
+  .class-member-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .class-member-card-photo-div {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  /* ===== INDEX GRID ===== */
+  .Index {
+    grid-template-columns: 1fr;
+  }
+
+  .Index div {
+    grid-column: span 1 !important;
+  }
+
+  /* ===== PROFILE SECTION ===== */
+  .general-card-container {
+    grid-template-columns: 1fr;
+  }
+
+  .introduce-character {
+    height: auto;
+    flex-direction: column;
+    padding: 30px 15px;
+  }
+
+  .character-photo-div {
+    position: static;
+    margin-top: 30px;
+  }
+
+  .character-content-div {
+    margin: 0;
+    text-align: center;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer-content {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .footer-middle {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-middle div {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-content {
+    padding-right: 60px;
+  }
+
+  .ngoitruong,
+  .menyeu {
+    font-size: 55px;
+  }
+  .hero-picture {
+    width: 450px;
+    height: 300px;
+    border-radius: 20px;
+    border: 10px double #7d5786;
+    border-radius: 20px;
+  }
+
+  .class-member-container {
+    grid-template-columns: 1fr;
+  }
+
+  .Index {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .Index div {
+    grid-column: span 1 !important;
+  }
+
+  footer {
+    padding: 40px 20px;
+  }
+}
+@media (min-width: 1400px) {
+  main {
+    max-width: 1400px;
+  }
+
+  .hero-content {
+    padding-right: 250px;
+  }
+}
+.video-box {
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
+.video-box iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
 }

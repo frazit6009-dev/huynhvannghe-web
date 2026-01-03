@@ -2,88 +2,350 @@
 <html>
   <head>
     <style>
+      html,
       body {
-        padding: 100px;
-      }
-      /* Popup container */
-      .popup {
-        position: relative;
-        display: inline-block;
-        cursor: pointer;
+        height: 100%;
+        margin: 0;
       }
 
-      /* The actual popup (appears on top) */
-      .popup .popuptext {
-        visibility: hidden;
-        width: 160px;
-        background-color: #555;
-        color: #fff;
-        text-align: center;
-        border-radius: 6px;
-        padding: 8px 0;
-        position: absolute;
-        z-index: 1;
-        bottom: 125%;
-        left: 50%;
-        margin-left: -80px;
+      body {
+        display: flex;
+        flex-direction: column;
+        font-family: Roboto, arial;
+        background: linear-gradient(123deg, rgb(228, 231, 229), #ffe6ef);
       }
-
-      /* Popup arrow */
-      .popup .popuptext::after {
-        content: "";
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        margin-left: -5px;
-        border-width: 5px;
-        border-style: solid;
-        border-color: #555 transparent transparent transparent;
+      footer {
+        background: linear-gradient(120deg, #25522e, #177536);
+        color: #eaf5ee;
+        padding: 10px 70px;
       }
-
-      /* Toggle this class when clicking on the popup container (hide and show the popup) */
-      .popup .show {
-        visibility: visible;
-        -webkit-animation: fadeIn 1s;
-        animation: fadeIn 1s;
+      .footer-header {
+        border: none;
+        border-bottom: 1px solid rgb(165, 165, 165);
       }
+      .footer-header h1 {
+        font-family: "Inter", sans-serif;
+        font-size: 50px;
+        color: white;
+      }
+      .footer-header span {
+        background: linear-gradient(90deg, #66bb6a, #a5d6a7);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .footer-content {
+        display: flex;
+        align-self: center;
+        justify-content: space-between;
+        border: none;
+        border-bottom: 1px solid rgb(165, 165, 165);
+        padding: 12px 0;
+      }
+      /* footer - left */
+      .footer-left div {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding-bottom: 10px;
+      }
+      .footer-left img {
+        width: 65px;
+        border-radius: 50%;
+        display: block;
+      }
+      .footer-left h2 {
+        font-family: "Inter", sans-serif;
+        color: white;
+        margin: 0;
+      }
+      .footer-left p {
+        font-family: "Inter", sans-serif;
+        font-size: 12px;
+        color: rgb(228, 228, 228);
+        line-height: 1.3em;
+        white-space: nowrap;
+      }
+      /* footer middle */
+      .footer-middle {
+        display: flex;
+        white-space: nowrap;
+      }
+      .footer-middle div {
+        padding-right: 55px;
+      }
+      .footer-middle h2 {
+        font-family: "Inter", sans-serif;
+        margin: 0;
+        color: #94dd03;
+        font-size: 18px;
+        padding: 10px;
+      }
+      .footer-middle ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        margin-top: 10px;
+      }
+      .footer-middle li {
+        color: rgb(228, 228, 228);
+        font-size: 12px;
+        padding: 10px;
+        transition: 0.3s ease;
+      }
+      .footer-middle li:hover {
+        background-color: rgba(211, 211, 211, 0.397);
+      }
+      .footer-middle a {
+        text-decoration: none;
+      }
+      /* footer right*/
+      .footer-right {
+        max-width: 300px;
+      }
+      .footer-right h2 {
+        font-family: "Inter", sans-serif;
+        margin: 0;
+        color: #94dd03;
+        font-size: 18px;
+        padding: 10px 0 30px 0;
+        white-space: nowrap;
+      }
+      .brand-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+        gap: 20px;
+      }
+      .brand-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 6px;
+        border-radius: 50px;
+        transition: 0.3s ease;
+        background-color: rgb(255, 255, 255);
 
-      /* Add animation (fade in the popup) */
-      @-webkit-keyframes fadeIn {
-        from {
-          opacity: 0;
+        overflow: hidden;
+      }
+      .brand-item:hover {
+        transform: translateY(-5px);
+      }
+      .brand-item img {
+        width: 100%;
+        filter: grayscale(100%);
+        opacity: 0.7;
+        transition: 0.3s ease;
+      }
+      .brand-item:hover img {
+        filter: grayscale(0);
+        opacity: 1;
+      }
+      /* author */
+      .copyright {
+        font-size: 12px;
+        padding: 12px 0;
+        color: white;
+        font-family: "Inter", sans-serif;
+      }
+      .copyright span {
+        color: #7aeb74;
+      }
+      @media (max-width: 1024px) {
+        .footer-content {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
         }
-        to {
-          opacity: 1;
-        }
-      }
 
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
+        .footer-content {
+          align-items: center;
         }
-        to {
-          opacity: 1;
+
+        footer {
+          padding: 40px 15px 15px;
+        }
+        .footer-header h1 {
+          text-align: center;
         }
       }
     </style>
   </head>
   <body>
-    <div
-      class="popup"
-      onclick="myFunction()">
-      Click me!
-      <span
-        class="popuptext"
-        id="myPopup">
-        Popup text...
-      </span>
-    </div>
-    <script>
-      // When the user clicks on <div>, open the popup
-      function myFunction() {
-        var popup = document.getElementById("myPopup");
-        popup.classList.toggle("show");
-      }
-    </script>
+    <footer class="footer">
+      <div class="footer-header">
+        <h1>
+          Trà Xanh
+          <span>Công Nghệ</span>
+        </h1>
+      </div>
+      <div class="footer-content">
+        <div class="footer-left">
+          <div>
+            <img src="photo/logo.jpg" />
+            <h2>Tận hưởng cuộc sống</h2>
+          </div>
+          <p>
+            Đã bao lâu rồi từ lần cuối bạn ngắm bầu trời hoàng hôn
+            <br />
+            tuyệt đẹp? Bao lâu rồi bạn không dành thời gian để nhìn lại
+            <br />
+            bản thân trong hành trình của mình? Hãy yêu thương bản
+            <br />
+            thân mình trước khi yêu thương bất kì ai.
+          </p>
+        </div>
+        <div class="footer-middle">
+          <div class="footer-middle-nav">
+            <h2>Thanh điều hướng</h2>
+            <ul>
+              <a href="index.html"><li>Trang chủ</li></a>
+              <a href="Introduce-member.html"><li>Thành viên</li></a>
+              <a href="Introduce-class.html"><li>Lớp 12.2</li></a>
+              <a href="Events-page.html"><li>Sự kiện</li></a>
+              <a href="Album.html"><li>Hình ảnh</li></a>
+              <a href="Sign-up.html"><li>Đăng kí</li></a>
+            </ul>
+          </div>
+          <div class="footer-middle-member">
+            <h2>Liên hệ tụi mình</h2>
+            <ul>
+              <a
+                href="https://www.facebook.com/twai.an.416522"
+                target="_blank">
+                <li>Nguyễn Hiền Thái An</li>
+              </a>
+              <a
+                href="https://www.facebook.com/nguyen.hao.449592"
+                target="_blank">
+                <li>Nguyễn Anh Hào</li>
+              </a>
+              <a
+                href="https://www.facebook.com/miing.tt?locale=vi_VN"
+                target="_blank">
+                <li>Nguyễn Thị Trà My</li>
+              </a>
+              <a
+                href="https://www.facebook.com/nguyen.trang.975166?locale=vi_VN"
+                target="_blank">
+                <li>Nguyễn Thị Thùy Trang</li>
+              </a>
+              <a
+                href="https://www.facebook.com/tnb.1038/about?locale=vi_VN"
+                target="_blank">
+                <li>Nguyễn Ngọc Bảo Trân</li>
+              </a>
+            </ul>
+          </div>
+          <div class="footer-middle-hvn">
+            <h2>THPT Huỳnh Văn Nghệ</h2>
+            <ul>
+              <a
+                href="https://www.facebook.com/profile.php?id=100028020954560"
+                target="_blank">
+                <li>Facebook Trường</li>
+              </a>
+              <a
+                href="https://www.facebook.com/profile.php?id=61584605757923"
+                target="_blank">
+                <li>Facebook Đoàn Trường</li>
+              </a>
+              <a
+                href="https://thpthuynhvannghehcm.edu.vn/"
+                target="_blank">
+                <li>Website Trường</li>
+              </a>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-right">
+          <h2>Xin chân thành cảm ơn</h2>
+          <div class="brand-grid">
+            <a
+              class="brand-item"
+              href="https://genshin.hoyoverse.com/vi/"
+              target="_black"
+              rel="noopener noreferrer">
+              <img src="brand-logo/Genshin_Impact_logo.png" />
+            </a>
+            <a
+              class="brand-item"
+              href="https://www.canva.com/"
+              target="_black"
+              rel="noopener noreferrer">
+              <img src="brand-logo/canva-logo.svg" />
+            </a>
+            <a
+              class="brand-item"
+              href="https://www.pinterest.com/"
+              target="_black"
+              rel="noopener noreferrer">
+              <img src="brand-logo/pinterest-logo.png" />
+            </a>
+            <a
+              class="brand-item"
+              href="https://www.photoroom.com/"
+              target="_black"
+              rel="noopener noreferrer">
+              <img src="brand-logo/Photoroom-logo.png" />
+            </a>
+            <a
+              class="brand-item"
+              href="https://chatgpt.com/"
+              target="_black"
+              rel="noopener noreferrer">
+              <img src="brand-logo/ChatGPT-Logo.png" />
+            </a>
+            <a
+              class="brand-item"
+              href="https://www.freepik.com/"
+              target="_black"
+              rel="noopener noreferrer">
+              <img src="brand-logo/freepik-logo.png" />
+            </a>
+            <a
+              class="brand-item"
+              href="https://github.com/"
+              target="_black"
+              rel="noopener noreferrer">
+              <img src="brand-logo/github-logo.png" />
+            </a>
+            <a
+              class="brand-item"
+              href="https://thpthuynhvannghehcm.edu.vn/"
+              target="_black"
+              rel="noopener noreferrer">
+              <img src="brand-logo/logo-HVN.jpg" />
+            </a>
+            <a
+              class="brand-item"
+              href="https://www.youtube.com/c/SuperSimpleDev"
+              target="_black"
+              rel="noopener noreferrer">
+              <img src="brand-logo/super-simple-dev.jpg" />
+            </a>
+            <a
+              class="brand-item"
+              href="https://vercel.com/"
+              target="_black"
+              rel="noopener noreferrer">
+              <img src="brand-logo/vercel-logo.svg" />
+            </a>
+            <a
+              class="brand-item"
+              href="https://uiverse.io/"
+              target="_black"
+              rel="noopener noreferrer">
+              <img src="brand-logo/uiverse-logo.png" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <p class="copyright">
+        Copyright &#169; 2025
+        <span>Trà Xanh Công Nghệ</span>
+        &#8226; Lớp 12.2 &#8226; Designed by An
+      </p>
+    </footer>
   </body>
 </html>

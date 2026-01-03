@@ -1,18 +1,26 @@
+html,
 body {
+  height: 100%;
   margin: 0;
-  font-family: Roboto, arial;
-  padding-bottom: 3000px;
-  padding-top: 100px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto", arial;
   background: linear-gradient(123deg, rgb(228, 231, 229), #ffe6ef);
+  padding-top: 67px;
 }
 p {
   margin: 0;
 }
 main {
+  flex: 1;
   max-width: 1262px;
   width: 100%;
   margin: 0 auto;
 }
+
 /*phần navbar*/
 .navbar {
   display: flex;
@@ -128,7 +136,8 @@ nav li {
   font-family: "Playfair Display", serif;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 150px;
+  margin-bottom: 50px;
+  padding: 12px;
 }
 .introduce-character {
   max-width: 1262px;
@@ -234,7 +243,7 @@ nav li {
   z-index: 3;
 }
 .character-name {
-  font-size: 50px;
+  font-size: clamp(26px, 5vw, 50px);
   font-weight: bold;
   color: #ffffff;
   padding-bottom: 20px;
@@ -359,4 +368,289 @@ nav li {
   padding-left: 8px;
   margin-left: 18px;
   border-left: 3px solid #7a5aff;
+}
+/* footer */
+footer {
+  background: linear-gradient(120deg, #25522e, #177536);
+  color: #eaf5ee;
+  padding: 10px 70px;
+}
+.footer-header {
+  border: none;
+  border-bottom: 1px solid rgb(165, 165, 165);
+}
+.footer-header h1 {
+  font-family: "Inter", sans-serif;
+  font-size: 50px;
+  color: white;
+}
+.footer-header span {
+  background: linear-gradient(90deg, #66bb6a, #a5d6a7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.footer-content {
+  display: flex;
+  align-self: center;
+  justify-content: space-between;
+  border: none;
+  border-bottom: 1px solid rgb(165, 165, 165);
+  padding: 12px 0;
+}
+/* footer - left */
+.footer-left div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 10px;
+}
+.footer-left img {
+  width: 65px;
+  border-radius: 50%;
+  display: block;
+}
+.footer-left h2 {
+  font-family: "Inter", sans-serif;
+  color: white;
+  margin: 0;
+}
+.footer-left p {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  color: rgb(228, 228, 228);
+  line-height: 1.3em;
+  white-space: nowrap;
+}
+/* footer middle */
+.footer-middle {
+  display: flex;
+  white-space: nowrap;
+}
+.footer-middle div {
+  padding-right: 55px;
+}
+.footer-middle h2 {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  color: #94dd03;
+  font-size: 18px;
+  padding: 10px;
+}
+.footer-middle ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 10px;
+}
+.footer-middle li {
+  color: rgb(228, 228, 228);
+  font-size: 12px;
+  padding: 10px;
+  transition: 0.3s ease;
+}
+.footer-middle li:hover {
+  background-color: rgba(211, 211, 211, 0.397);
+}
+.footer-middle a {
+  text-decoration: none;
+}
+/* footer right*/
+.footer-right {
+  max-width: 300px;
+}
+.footer-right h2 {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  color: #94dd03;
+  font-size: 18px;
+  padding: 10px 0 30px 0;
+  white-space: nowrap;
+}
+.brand-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+  gap: 20px;
+}
+.brand-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px;
+  border-radius: 50px;
+  transition: 0.3s ease;
+  background-color: rgb(255, 255, 255);
+
+  overflow: hidden;
+}
+.brand-item:hover {
+  transform: translateY(-5px);
+}
+.brand-item img {
+  width: 100%;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: 0.3s ease;
+}
+.brand-item:hover img {
+  filter: grayscale(0);
+  opacity: 1;
+}
+/* author */
+.copyright {
+  font-size: 12px;
+  padding: 12px 0;
+  color: white;
+  font-family: "Inter", sans-serif;
+}
+.copyright span {
+  color: #7aeb74;
+}
+@media (max-width: 1024px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-content {
+    align-items: center;
+  }
+
+  footer {
+    padding: 40px 15px 15px;
+  }
+  .footer-header h1 {
+    text-align: center;
+  }
+}
+/*0000000000000000000000000000*/
+@media (max-width: 1024px) {
+  /* member container */
+  .introduce-character {
+    height: 360px;
+  }
+
+  .character-photo-div img {
+    max-height: 420px;
+    height: 100%;
+  }
+
+  .character-content-div {
+    margin-left: 50px;
+    margin-bottom: 40px;
+  }
+
+  .character-name {
+    font-size: 40px;
+  }
+
+  .character-script {
+    font-size: 16px;
+  }
+
+  /* information */
+  .information-content {
+    gap: 80px;
+  }
+
+  .information-container {
+    white-space: normal;
+    max-height: none;
+  }
+}
+@media (max-width: 768px) {
+  /* member title */
+  .thanh-vien-title {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+
+  /* introduce character */
+  .introduce-character {
+    height: auto;
+    min-height: 520px;
+    flex-direction: column;
+    border-radius: 25px;
+  }
+
+  .introduce-background-an,
+  .introduce-background-hao,
+  .introduce-background-my,
+  .introduce-background-trang,
+  .introduce-background-tran,
+  .gradient {
+    border-radius: 25px 25px 0 0;
+  }
+
+  .character-photo-div {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin-top: 20px;
+  }
+
+  .character-photo-div img {
+    height: 320px;
+  }
+
+  .character-content-div {
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .character-name {
+    font-size: 32px;
+  }
+
+  .character-script {
+    font-size: 14px;
+    line-height: 1.6em;
+  }
+
+  /* dash */
+  .dash {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    margin: 15px auto;
+  }
+
+  /* information */
+  .information-container {
+    border-radius: 0 0 25px 25px;
+    padding: 15px;
+  }
+
+  .information-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .information-head {
+    font-size: 24px;
+  }
+}
+@media (max-width: 480px) {
+  .character-name {
+    font-size: 26px;
+  }
+
+  .character-photo-div img {
+    height: 260px;
+  }
+
+  .information-detail-title {
+    font-size: 18px;
+  }
+
+  .information-detail-script-an,
+  .information-detail-script-hao,
+  .information-detail-script-my,
+  .information-detail-script-trang,
+  .information-detail-script-tran {
+    font-size: 13px;
+    line-height: 20px;
+  }
 }
